@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  en_title: MyString
+  ja_title: MyString
+  en_content: MyString
+  ja_content: MyString
+  url: MyString
+
+two:
+  en_title: MyString
+  ja_title: MyString
+  en_content: MyString
+  ja_content: MyString
+  url: MyString

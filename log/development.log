@@ -1,0 +1,385 @@
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateImages (20170522124052)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateImages (20170522124052)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_images_on_en_title_and_ja_title" ON "images" ("en_title", "ja_title")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170522124052"]]
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-05-22 12:44:53 UTC], ["updated_at", 2017-05-22 12:44:53 UTC]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+[0m
+Started GET "/" for 126.129.109.5 at 2017-05-22 12:46:42 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  Rendered images/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 1353ms (Views: 1336.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "images" ("en_title", "ja_title", "en_content", "ja_content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["en_title", "Shinjuku Station East Exit"], ["ja_title", "新宿駅東口"], ["en_content", "FirstKitchen・Macdnald"], ["ja_content", "ファーストキッチン・マクドナルド"], ["created_at", 2017-05-22 12:51:46 UTC], ["updated_at", 2017-05-22 12:51:46 UTC]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("en_title", "ja_title", "en_content", "ja_content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["en_title", "Shinjuku Station East Exit"], ["ja_title", "新宿駅東口"], ["en_content", "FirstKitchen・Macdnald"], ["ja_content", "ファーストキッチン・マクドナルド"], ["created_at", 2017-05-22 12:51:46 UTC], ["updated_at", 2017-05-22 12:51:46 UTC]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 126.129.109.5 at 2017-05-22 12:54:09 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 45ms (Views: 38.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 126.129.109.5 at 2017-05-22 13:35:25 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 447ms (Views: 410.7ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+[0m
+Started GET "/" for 126.129.109.5 at 2017-05-22 13:40:24 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (97.1ms)
+Completed 200 OK in 144ms (Views: 132.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:40:30 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 181ms (Views: 178.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:41:43 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:41:57 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LxlUvcruMy1SLibW3EOkHt5gBY2ef9aDdxT+gBanq6c7qEfq98Wx/7h5drJ8WYISeD9K/r5KLgkA7mMKz+T17Q==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f6c38d75a90 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-26059-2gb9ge.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 0.0ms)
+
+
+  
+Excon::Error::Socket (getaddrinfo: Name or service not known (SocketError)):
+  
+app/controllers/images_controller.rb:11:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (28.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.3ms)
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:45:18 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 237ms (Views: 152.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:45:24 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DOrdZ7FiR36GCsZwgpXGiEaW8wzWEw9k5zRSoDhUJNIYW84wjEnFrGxdlhQij+CE4Mm8f/Ym9+6Qzs8q4Rd6mA==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f30720142b8 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-26998-1wf72n4.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+Excon::Error::Socket (getaddrinfo: Name or service not known (SocketError)):
+  
+app/controllers/images_controller.rb:11:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.7ms)
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:47:50 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:47:55 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zDsYP6uuTB6Awfkxc4H5A3zOKsFIdbycXixbImYvGw7YigtoloXOzGqWqVXTm98P2pFlsmhARBYp1saov2xFRA==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f3072dbcf00 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-26998-vczwpo.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+Excon::Error::Socket (getaddrinfo: Name or service not known (SocketError)):
+  
+app/controllers/images_controller.rb:11:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.5ms)
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:48:22 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 36ms (Views: 18.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:48:29 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"be7pBX/KpE9izVESYY6dWnsARCM5EZ8XEIKExp9kblh5X/pSQuEmnYiaAXbBlLtW3V8LUBkkZ51neBlMRicwEg==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f307262a8a0 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-26998-1pzm5q7.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+Excon::Error::Socket (getaddrinfo: Name or service not known (SocketError)):
+  
+app/controllers/images_controller.rb:11:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.8ms)
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:51:08 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:51:14 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eJnM3Bk/fvdm+vHGexE551jpqo+n9oL2IIzgYh/BGMNsKN+LJBT8JYytoaLbCx/r/rbl/IfDenxXdn3oxoJGiQ==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f30735d59a8 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-26998-6fw2k1.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+Excon::Error::Socket (getaddrinfo: Name or service not known (SocketError)):
+  
+app/controllers/images_controller.rb:11:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.1ms)
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:51:42 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:51:46 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kmtz4s768HXuiZtOdf8QfOPvrXQllYqW6cJrS/PGC4GG2mC189FypwTeyyrV5TZwRbDiBwWgchyeOPbBKoVVyw==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f3071fa5a48 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-26998-ufh58m.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+Excon::Error::Socket (getaddrinfo: Name or service not known (SocketError)):
+  
+app/controllers/images_controller.rb:11:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:52:05 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 382ms (Views: 346.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:52:10 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QMRXKFcnQefHZ4DZ8RtLheh5N7dBekTlZDHwfGhsINtUdUR/agzDNS0w0L1RAW2JTiZ4xGFPvG8Ty232sS9+kQ==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f9d566a0748 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-27967-1sz7n4q.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+Completed 500 Internal Server Error in 819ms (ActiveRecord: 0.0ms)
+
+
+  
+Excon::Error::Forbidden (Expected(200) <=> Actual(403 Forbidden)
+excon.error.response
+  :body          => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>InvalidAccessKeyId</Code><Message>The AWS Access Key Id you provided does not exist in our records.</Message><AWSAccessKeyId>AKIAIOMG4DZ5N46SAPDQ</AWSAccessKeyId><RequestId>015B64EA43A73CDF</RequestId><HostId>MG7U2R/WvkqMYhi3AiSd1Ri7DY7cxWNC5OLT1GkE73gaMs8YJiaAHnBJBS0qzoDr7Y/9ek5k1IA=</HostId></Error>"
+  :cookies       => [
+  ]
+  :headers       => {
+    "Connection"       => "close"
+    "Content-Type"     => "application/xml"
+    "Date"             => "Mon, 22 May 2017 13:52:10 GMT"
+    "Server"           => "AmazonS3"
+    "x-amz-id-2"       => "MG7U2R/WvkqMYhi3AiSd1Ri7DY7cxWNC5OLT1GkE73gaMs8YJiaAHnBJBS0qzoDr7Y/9ek5k1IA="
+    "x-amz-request-id" => "015B64EA43A73CDF"
+  }
+  :host          => "test-town.s3-ap-northeast-1.amazonaws.com"
+  :local_address => "172.17.1.131"
+  :local_port    => 46524
+  :path          => "/cache/1495461130-27967-0001-0367/307373.png"
+  :port          => 443
+  :reason_phrase => "Forbidden"
+  :remote_ip     => "52.219.0.31"
+  :status        => 403
+  :status_line   => "HTTP/1.1 403 Forbidden\r\n"
+):
+  
+app/controllers/images_controller.rb:11:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.8ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.2ms)
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:56:23 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 287ms (Views: 249.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images" for 126.129.109.5 at 2017-05-22 13:56:43 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/new" for 126.129.109.5 at 2017-05-22 13:56:47 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-22 13:56:53 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CTkK51tPabVMkZcQEnxa7txJZlLX//r55cGZ+VahFRMdiBmwZmTrZ6bGx3SyZnziehYpIffKAnOSOwRzj+JLWQ==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f7d3915d9f8 @tempfile=#<Tempfile:/tmp/RackMultipart20170522-28852-f1vv0e.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+No template found for ImagesController#create, rendering head :no_content
+Completed 204 No Content in 870ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 126.129.109.5 at 2017-05-22 14:03:02 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 126.129.109.5 at 2017-05-23 02:25:14 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 447ms (Views: 420.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/images/new" for 126.129.109.5 at 2017-05-23 02:25:22 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 111ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images" for 126.129.109.5 at 2017-05-23 02:25:33 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for 126.129.109.5 at 2017-05-23 02:25:37 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dW8j1AMwqBAm1PybR/k3Pic/5blBUXwopAD/pGisc6Vh3jCDPhsqwsyDrP/n4xEygWCqymFkhKLT+mIuse8t7w==", "image"=>{"url"=>#<ActionDispatch::Http::UploadedFile:0x007f2c81b7bce0 @tempfile=#<Tempfile:/tmp/RackMultipart20170523-31101-1brhncz.png>, @original_filename="307373.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image[url]\"; filename=\"307373.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Image"}
+No template found for ImagesController#create, rendering head :no_content
+Completed 204 No Content in 312ms (ActiveRecord: 0.0ms)
+
+
