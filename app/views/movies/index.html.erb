@@ -1,0 +1,75 @@
+<% if @results.nil? %>
+<table class="ui celled table">
+  <thead>
+    <tr><th>ID</th>
+    <th>タイトル（英語）</th>
+    <th>タイトル（日本語）</th>
+    <th>内容（英語）</th>
+    <th>内容（日本語）</th>
+    <th>現在地</th>
+    <th>目的地</th>
+    <th>登録日</th>
+    <th>編集日</th>
+    <th>管理</th>
+  </tr></thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+    <tr>
+     <td><%= movie.id %></td>
+     <td><%= link_to "#{movie.en_title}", movie %></td>
+     <td><%= movie.ja_title %></td>
+     <td><%= movie.en_content %></td>
+     <td><%= movie.ja_content %></td>
+     <td><%= movie.present %></td>
+     <td><%= movie.destination %></td>
+     <td><%= show_dat(movie.created_at) %></td>
+     <td><%= show_dat(movie.updated_at) %></td>
+     <td>
+      <%= link_to "編集", edit_movie_path(movie.id), { :class => "ui olive button" } %>
+      <%= link_to "削除", movie, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
+     </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @movies %>
+<% end %>
+
+
+<% if !@results.nil? %>
+<table class="ui celled table">
+  <thead>
+    <tr><th>ID</th>
+    <th>タイトル（英語）</th>
+    <th>タイトル（日本語）</th>
+    <th>内容（英語）</th>
+    <th>内容（日本語）</th>
+    <th>現在地</th>
+    <th>目的地</th>
+    <th>登録日</th>
+    <th>編集日</th>
+    <th>管理</th>
+  </tr></thead>
+  <tbody>
+    <% @results.each do |movie| %>
+    <tr>
+     <td><%= movie.id %></td>
+     <td><%= link_to "#{movie.en_title}", movie %></td>
+     <td><%= movie.ja_title %></td>
+     <td><%= movie.en_content %></td>
+     <td><%= movie.ja_content %></td>
+     <td><%= movie.present %></td>
+     <td><%= movie.destination %></td>
+     <td><%= show_dat(movie.created_at) %></td>
+     <td><%= show_dat(movie.updated_at) %></td>
+     <td>
+      <%= link_to "編集", edit_movie_path(movie.id), { :class => "ui olive button" } %>
+      <%= link_to "削除", movie, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
+     </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @results %>
+
+<% end %>

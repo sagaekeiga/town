@@ -29,6 +29,10 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
 
+gem 'kaminari'
+gem "ransack"
+
+
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 
 # Use ActiveModel has_secure_password

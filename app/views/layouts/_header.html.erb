@@ -1,14 +1,64 @@
-<div class="ui segment">
+  <div class="ui segment">
   <h3 class="ui right aligned header">
-    <%= link_to "新規登録", new_image_path %>
-  </h3>
-  <h3 class="ui left aligned header">
-    <%= link_to "Home", root_path %>
+    <!-- 上部ナビゲーションメニュー -->
+    <% if controller.controller_name == 'images' && controller.action_name == 'new' %>
+      <%= link_to "画像登録", new_image_path, { :class => "ui blue button" } %>
+    <% else %>
+      <%= link_to "画像登録", new_image_path, { :class => "ui primary basic button" } %>
+    <% end %>
+    
+    <% if controller.controller_name == 'movies' && controller.action_name == 'new' %>
+      <%= link_to "動画登録", new_movie_path, { :class => "ui black button" } %>
+    <% else %>
+      <%= link_to "動画登録", new_movie_path, { :class => "ui secondary basic button" } %>
+    <% end %>
+    
+    <% if controller.controller_name == 'images' && controller.action_name == 'index' %>
+      <%= link_to "画像一覧", images_path, { :class => "ui green button" } %>
+    <% else %>
+      <%= link_to "画像一覧", images_path, { :class => "ui positive basic button" } %>
+    <% end %>
+    
+    <% if controller.controller_name == 'movies' && controller.action_name == 'index' %>
+      <%= link_to "動画一覧", movies_path, { :class => "ui red button" } %>
+    <% else %>
+      <%= link_to "動画一覧", movies_path, { :class => "ui negative basic button" } %>
+    <% end %>
+    
+    
   </h3>
   <h3 class="ui justified header">
     This should take up the full width even if only one line
   </h3>
   <h3 class="ui center aligned header">
-    Center
+      <% if controller.controller_name == 'images' %>
+        <%= search_form_for @q do |f| %>
+        <div class="ui fluid action input">
+        <%= f.search_field :ja_title_or_ja_content_cont, :placeholder => "画像専用：日本語タイトル・内容対応" %>
+        <%= f.submit "検索", { :class => "ui teal right labeled icon button" } %>
+        </div>
+        <% end %>
+      <% end %>
+      <% if controller.controller_name == 'movies' %>
+        <%= search_form_for @q do |f| %>
+        <div class="ui fluid action input">
+        <%= f.search_field :ja_title_or_ja_content_cont, :placeholder => "動画専用：日本語タイトル・内容対応" %>
+        <%= f.submit "検索", { :class => "ui teal right labeled icon button" } %>
+        </div>
+        <% end %>
+      <% end %>
   </h3>
 </div>
+
+
+
+<!-- jQuery 読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- semantic.js 読み込み --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js" integrity="sha256-HcON65l89nxNl7vaRECVPe/zNDBzhCcJYBE7O+EcruU=" crossorigin="anonymous"></script>
+<!-- サイドバーの開閉処理 -->
+<script>
+  $('#js-sidebar').click(function() {
+    $('.ui.sidebar').sidebar('toggle');
+  });
+</script>

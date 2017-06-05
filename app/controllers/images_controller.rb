@@ -1,9 +1,12 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.all
+    @q = Image.search(params[:q])
+    @results = @q.result(distinct: true).page(params[:page])
+    @images = Image.page(params[:page])
   end
   
   def new
+    @q = Image.search(params[:q])
     @image = Image.new
   end
   
@@ -16,10 +19,12 @@ class ImagesController < ApplicationController
   end
   
   def show
+    @q = Image.search(params[:q])
     @image = Image.find(params[:id])
   end
   
   def edit
+    @q = Image.search(params[:q])
     @image = Image.find(params[:id])
   end
   

@@ -1,4 +1,4 @@
-
+<% if @results.nil? %>
 <table class="ui celled table">
   <thead>
     <tr><th>ID</th>
@@ -7,6 +7,8 @@
     <th>内容（英語）</th>
     <th>内容（日本語）</th>
     <th>URL</th>
+    <th>登録日</th>
+    <th>編集日</th>
     <th>管理</th>
   </tr></thead>
   <tbody>
@@ -18,11 +20,52 @@
      <td><%= image.en_content %></td>
      <td><%= image.ja_content %></td>
      <td><%= image_tag(image.url, :size => '50x50') %></td>
+     <td><%= show_dat(image.created_at) %></td>
+     <td><%= show_dat(image.updated_at) %></td>
      <td>
-      <%= link_to "編集", edit_image_path(image.id) %>
-		    <%= link_to "削除", image, method: :delete, data: { confirm: "本当に削除してもいいですか？" } %>
+      <%= link_to "編集", edit_image_path(image.id), { :class => "ui olive button" } %>
+      <%= link_to "削除", image, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
      </td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @images %>
+<% end %>
+
+<% if !@results.nil? %>
+<table class="ui celled table">
+  <thead>
+    <tr><th>ID</th>
+    <th>タイトル（英語）</th>
+    <th>タイトル（日本語）</th>
+    <th>内容（英語）</th>
+    <th>内容（日本語）</th>
+    <th>URL</th>
+    <th>登録日</th>
+    <th>編集日</th>
+    <th>管理</th>
+  </tr></thead>
+  <tbody>
+    <% @results.each do |image| %>
+    <tr>
+     <td><%= image.id %></td>
+     <td><%= link_to "#{image.en_title}", image %></td>
+     <td><%= image.ja_title %></td>
+     <td><%= image.en_content %></td>
+     <td><%= image.ja_content %></td>
+     <td><%= image_tag(image.url, :size => '50x50') %></td>
+     <td><%= show_dat(image.created_at) %></td>
+     <td><%= show_dat(image.updated_at) %></td>
+     <td>
+      <%= link_to "編集", edit_image_path(image.id), { :class => "ui olive button" } %>
+      <%= link_to "削除", image, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
+     </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @results %>
+<% end %>

@@ -1,0 +1,42 @@
+
+
+<%= form_for(@movie,  html: {class: 'ui form'}) do |f| %>
+  <div class="field">
+    <label>タイトル(英語)</label>
+      <%= f.text_field :en_title, class: '' %>
+  </div>
+  
+  <div class="field">
+    <label>タイトル(日本語)</label>
+      <%= f.text_field :ja_title, class: '' %>
+  </div>
+  
+  <div class="field">
+    <label>内容(英語)</label>
+      <%= f.text_field :en_content, class: '' %>
+  </div>
+  
+  <div class="field">
+    <label>内容(日本語)</label>
+      <%= f.text_field :ja_content, class: '' %>
+  </div>
+  
+  <div class="field">
+    <label>現在地</label>
+      <%= f.text_field :present, class: '' %>
+  </div>
+  
+  <div class="field">
+    <label>目的地</label>
+      <%= f.text_field :destination, class: '' %>
+  </div>
+  
+  <div class="field">
+    <label>URL</label>
+      <%= f.file_field :url, class: '' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "更新", class: 'ui button'%>
+  </div>
+<% end %>
