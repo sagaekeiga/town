@@ -6,6 +6,7 @@
     <th>タイトル（日本語）</th>
     <th>内容（英語）</th>
     <th>内容（日本語）</th>
+    <th>位置</th>
     <th>URL</th>
     <th>登録日</th>
     <th>編集日</th>
@@ -19,6 +20,7 @@
      <td><%= image.ja_title %></td>
      <td><%= image.en_content %></td>
      <td><%= image.ja_content %></td>
+     <td><%= image.location %></td>
      <td><%= image_tag(image.url, :size => '50x50') %></td>
      <td><%= show_dat(image.created_at) %></td>
      <td><%= show_dat(image.updated_at) %></td>
@@ -42,6 +44,7 @@
     <th>タイトル（日本語）</th>
     <th>内容（英語）</th>
     <th>内容（日本語）</th>
+    <th>位置</th>
     <th>URL</th>
     <th>登録日</th>
     <th>編集日</th>
@@ -55,6 +58,7 @@
      <td><%= image.ja_title %></td>
      <td><%= image.en_content %></td>
      <td><%= image.ja_content %></td>
+     <td><%= image.location %></td>
      <td><%= image_tag(image.url, :size => '50x50') %></td>
      <td><%= show_dat(image.created_at) %></td>
      <td><%= show_dat(image.updated_at) %></td>
