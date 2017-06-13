@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170604100110) do
     t.string   "ja_title"
     t.string   "en_content"
     t.string   "ja_content"
+    t.string   "location"
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
