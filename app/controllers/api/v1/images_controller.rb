@@ -10,7 +10,7 @@ module Api
       
       def search
          location = request.body.read
-         @images = Image.where(location: location)
+         @images = Image.where(location: "地下一階")
          @images.destroy_all
       end
 
