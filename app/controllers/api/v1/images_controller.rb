@@ -1,6 +1,7 @@
 module Api
   module V1
     class ImagesController < ApplicationController
+    skip_before_filter :verify_authenticity_token
 
       def index
         @images = Image.all
@@ -8,7 +9,7 @@ module Api
       end
       
       def search
-         location = request.body.read
+         location = JSON.parse(request.body.read)
          @images = Image.where(location: location)
          @images.destroy_all
       end
