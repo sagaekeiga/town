@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   
   namespace :api, { format: 'json' } do
     namespace :v1, { format: 'json' } do 
-      post 'images/search'
-      resources :images
+
+      resources :images, :only => [:index] do
+        member do
+          post 'search'
+        end
+      end
       resources :movies
     end
   end

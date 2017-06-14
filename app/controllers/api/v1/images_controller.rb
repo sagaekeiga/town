@@ -8,20 +8,19 @@ module Api
       end
       
       def search
-        if params[:gps].blank?
-          render json: [{"error": "100", "msg": "必須パラメーターがありません", "required": {"key": "name"}}]
-        else 
-          @image = Image.where("location like ?", "%" + params[:gps] + "%")
-      
-          if @image.empty?
-            @image = Image.where("location like ?", "%" + params[:gps] + "%")
-          end
-      
-          render json: "2"
-        end
-      end
-      
-    end
+        
+         @image = Image.new(image_params)
+         @image.loation = params[:gps]
+         @image.save!
 
+      end
+
+      private
+      
+        def image_params
+          params.require(:image).permit(:en_title, :ja_title, :en_content, :ja_content, :url, :location)
+        end
+        
+    end
   end
 end
