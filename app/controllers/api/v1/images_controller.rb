@@ -9,7 +9,7 @@ module Api
       end
       
       def search
-         location = JSON.parse(request.body.read)
+         location = request.body.read
          @images = Image.where(location: location)
          @images.destroy_all
       end
