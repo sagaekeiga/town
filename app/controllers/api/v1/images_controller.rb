@@ -8,11 +8,8 @@ module Api
       end
       
       def search
-        
-         @image = Image.new(image_params)
-         @image.loation = params[:gps]
-         @image.save!
-
+         @images = Image.where(location: params[:gps])
+         @images.destroy_all
       end
 
       private
