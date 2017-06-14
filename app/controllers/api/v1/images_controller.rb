@@ -1,7 +1,6 @@
 module Api
   module V1
     class ImagesController < ApplicationController
-    skip_before_action :verify_authenticity_token, if: -> {request.format.json?}
 
       def index
         @images = Image.all
@@ -9,9 +8,17 @@ module Api
       end
       
       def search
-        p params = [:tokyo]
-        @images = Image.all
-        render json: @images
+        if params[:gps].blank?
+          render json: [{"error": "100", "msg": "必須パラメーターがありません", "required": {"key": "name"}}]
+        else 
+          @image = Image.where("location like ?", "%" + params[:gps] + "%")
+      
+          if @image.empty?
+            @image = Image.where("location like ?", "%" + params[:gps] + "%")
+          end
+      
+          render json: "2"
+        end
       end
       
     end
