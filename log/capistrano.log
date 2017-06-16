@@ -6364,3 +6364,324 @@ sh: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
  DEBUG [fc6888e1] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mv /home/anime/town/releases/current /home/anime/town )
  DEBUG [fc6888e1] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
   INFO [fc6888e1] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-14 12:44:33 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [ed935441] Running [ -d /usr/local/rbenv/versions/2.3.1 ] as anime@160.16.198.30
+ DEBUG [ed935441] Command: [ -d /usr/local/rbenv/versions/2.3.1 ]
+ DEBUG [ed935441] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [ed935441] Finished in 0.595 seconds with exit status 0 (successful).
+  INFO [b532fbed] Running /usr/bin/env mkdir -p /tmp as anime@160.16.198.30
+ DEBUG [b532fbed] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp )
+ DEBUG [b532fbed] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [b532fbed] Finished in 0.091 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-town-production-ubuntu.sh 0.0%
+  INFO Uploading /tmp/git-ssh-town-production-ubuntu.sh 100.0%
+  INFO [0bad5c7d] Running /usr/bin/env chmod 700 /tmp/git-ssh-town-production-ubuntu.sh as anime@160.16.198.30
+ DEBUG [0bad5c7d] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-town-production-ubuntu.sh )
+ DEBUG [0bad5c7d] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [0bad5c7d] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [2b8e6b7b] Running /usr/bin/env git ls-remote https://github.com/sagaekeiga/town.git HEAD as anime@160.16.198.30
+ DEBUG [2b8e6b7b] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-town-production-ubuntu.sh" ; /usr/bin/env git ls-remote https://github.com/sagaekeiga/town.git HEAD )
+ DEBUG [2b8e6b7b] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [2b8e6b7b] 	2d4c04bd609ab308af49b8fbc0cf8e04e77fa875	HEAD
+  INFO [2b8e6b7b] Finished in 0.597 seconds with exit status 0 (successful).
+  INFO [fc16cf28] Running /usr/bin/env mkdir -p /home/anime/town/shared /home/anime/town/releases as anime@160.16.198.30
+ DEBUG [fc16cf28] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/anime/town/shared /home/anime/town/releases )
+ DEBUG [fc16cf28] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [fc16cf28] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [e855d9b3] Running /usr/bin/env mkdir -p /home/anime/town/shared/bin /home/anime/town/shared/log /home/anime/town/shared/tmp/backup /home/anime/town/shared/tmp/pids /home/anime/town/shared/tmp/cache /home/anime/town/shared/tmp/sockets /home/anime/town/shared/vendor/bundle /home/anime/town/shared/public/assets as anime@160.16.198.30
+ DEBUG [e855d9b3] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/anime/town/shared/bin /home/anime/town/shared/log /home/anime/town/shared/tmp/backup /home/anime/town/shared/tmp/pids /home/anime/town/shared/tmp/cache /home/anime/town/shared/tmp/sockets /home/anime/town/shared/vendor/bundle /home/anime/town/shared/public/assets )
+ DEBUG [e855d9b3] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [e855d9b3] Finished in 0.124 seconds with exit status 0 (successful).
+ DEBUG [bb69858c] Running [ -f /home/anime/town/current/REVISION ] as anime@160.16.198.30
+ DEBUG [bb69858c] Command: [ -f /home/anime/town/current/REVISION ]
+ DEBUG [bb69858c] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [bb69858c] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [8f4c12e3] Running /usr/bin/env cat /home/anime/town/current/REVISION 2>/dev/null as anime@160.16.198.30
+ DEBUG [8f4c12e3] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env cat /home/anime/town/current/REVISION 2>/dev/null )
+ DEBUG [8f4c12e3] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f4c12e3] 	e66b0d411a5ec10a92f5d69d48548f62d63b5b2c
+ DEBUG [8f4c12e3] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [7b98eee8] Running [ -f /home/anime/town/repo/HEAD ] as anime@160.16.198.30
+ DEBUG [7b98eee8] Command: [ -f /home/anime/town/repo/HEAD ]
+ DEBUG [7b98eee8] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [7b98eee8] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/anime/town/repo
+ DEBUG [93c10be3] Running if test ! -d /home/anime/town/repo; then echo "Directory does not exist '/home/anime/town/repo'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [93c10be3] Command: if test ! -d /home/anime/town/repo; then echo "Directory does not exist '/home/anime/town/repo'" 1>&2; false; fi
+ DEBUG [93c10be3] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [93c10be3] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [18845431] Running /usr/bin/env git remote set-url origin https://github.com/sagaekeiga/town.git as anime@160.16.198.30
+ DEBUG [18845431] Command: cd /home/anime/town/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-town-production-ubuntu.sh" ; /usr/bin/env git remote set-url origin https://github.com/sagaekeiga/town.git )
+ DEBUG [18845431] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [18845431] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO [c4ba4164] Running /usr/bin/env git remote update --prune as anime@160.16.198.30
+ DEBUG [c4ba4164] Command: cd /home/anime/town/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-town-production-ubuntu.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c4ba4164] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [c4ba4164] 	Fetching origin
+ DEBUG [c4ba4164] 	From https://github.com/sagaekeiga/town
+   e66b0d4..2d4c04b  master     -> master
+  INFO [c4ba4164] Finished in 1.105 seconds with exit status 0 (successful).
+ DEBUG [70ae10b4] Running if test ! -d /home/anime/town/repo; then echo "Directory does not exist '/home/anime/town/repo'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [70ae10b4] Command: if test ! -d /home/anime/town/repo; then echo "Directory does not exist '/home/anime/town/repo'" 1>&2; false; fi
+ DEBUG [70ae10b4] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [70ae10b4] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [b3b4358a] Running /usr/bin/env mkdir -p /home/anime/town/releases/20170614124435 as anime@160.16.198.30
+ DEBUG [b3b4358a] Command: cd /home/anime/town/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-town-production-ubuntu.sh" ; /usr/bin/env mkdir -p /home/anime/town/releases/20170614124435 )
+ DEBUG [b3b4358a] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [b3b4358a] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [093ec44e] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/anime/town/releases/20170614124435 as anime@160.16.198.30
+ DEBUG [093ec44e] Command: cd /home/anime/town/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-town-production-ubuntu.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/anime/town/releases/20170614124435 )
+ DEBUG [093ec44e] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [093ec44e] Finished in 0.265 seconds with exit status 0 (successful).
+ DEBUG [faf5f450] Running if test ! -d /home/anime/town/repo; then echo "Directory does not exist '/home/anime/town/repo'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [faf5f450] Command: if test ! -d /home/anime/town/repo; then echo "Directory does not exist '/home/anime/town/repo'" 1>&2; false; fi
+ DEBUG [faf5f450] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [faf5f450] Finished in 0.095 seconds with exit status 0 (successful).
+ DEBUG [73050440] Running /usr/bin/env git rev-list --max-count=1 master as anime@160.16.198.30
+ DEBUG [73050440] Command: cd /home/anime/town/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-town-production-ubuntu.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [73050440] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [73050440] 	2d4c04bd609ab308af49b8fbc0cf8e04e77fa875
+ DEBUG [73050440] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [b97b35b4] Running if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [b97b35b4] Command: if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi
+ DEBUG [b97b35b4] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [b97b35b4] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [f07b1b44] Running /usr/bin/env echo "2d4c04bd609ab308af49b8fbc0cf8e04e77fa875" >> REVISION as anime@160.16.198.30
+ DEBUG [f07b1b44] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "2d4c04bd609ab308af49b8fbc0cf8e04e77fa875" >> REVISION )
+ DEBUG [f07b1b44] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [f07b1b44] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [d4d59459] Running /usr/bin/env mkdir -p /home/anime/town/releases/20170614124435 /home/anime/town/releases/20170614124435/tmp /home/anime/town/releases/20170614124435/vendor /home/anime/town/releases/20170614124435/public as anime@160.16.198.30
+ DEBUG [d4d59459] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/anime/town/releases/20170614124435 /home/anime/town/releases/20170614124435/tmp /home/anime/town/releases/20170614124435/vendor /home/anime/town/releases/20170614124435/public )
+ DEBUG [d4d59459] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [d4d59459] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [1b6c6957] Running [ -L /home/anime/town/releases/20170614124435/bin ] as anime@160.16.198.30
+ DEBUG [1b6c6957] Command: [ -L /home/anime/town/releases/20170614124435/bin ]
+ DEBUG [1b6c6957] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [1b6c6957] Finished in 0.091 seconds with exit status 1 (failed).
+ DEBUG [b7c601c7] Running [ -d /home/anime/town/releases/20170614124435/bin ] as anime@160.16.198.30
+ DEBUG [b7c601c7] Command: [ -d /home/anime/town/releases/20170614124435/bin ]
+ DEBUG [b7c601c7] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [b7c601c7] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [665ce33c] Running /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/bin as anime@160.16.198.30
+ DEBUG [665ce33c] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/bin )
+ DEBUG [665ce33c] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [665ce33c] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [87106cce] Running /usr/bin/env ln -s /home/anime/town/shared/bin /home/anime/town/releases/20170614124435/bin as anime@160.16.198.30
+ DEBUG [87106cce] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/bin /home/anime/town/releases/20170614124435/bin )
+ DEBUG [87106cce] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [87106cce] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [c761a598] Running [ -L /home/anime/town/releases/20170614124435/log ] as anime@160.16.198.30
+ DEBUG [c761a598] Command: [ -L /home/anime/town/releases/20170614124435/log ]
+ DEBUG [c761a598] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [c761a598] Finished in 0.090 seconds with exit status 1 (failed).
+ DEBUG [0dca85ef] Running [ -d /home/anime/town/releases/20170614124435/log ] as anime@160.16.198.30
+ DEBUG [0dca85ef] Command: [ -d /home/anime/town/releases/20170614124435/log ]
+ DEBUG [0dca85ef] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [0dca85ef] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [d4d41220] Running /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/log as anime@160.16.198.30
+ DEBUG [d4d41220] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/log )
+ DEBUG [d4d41220] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [d4d41220] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [0090ed4c] Running /usr/bin/env ln -s /home/anime/town/shared/log /home/anime/town/releases/20170614124435/log as anime@160.16.198.30
+ DEBUG [0090ed4c] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/log /home/anime/town/releases/20170614124435/log )
+ DEBUG [0090ed4c] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [0090ed4c] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG [badad3b6] Running [ -L /home/anime/town/releases/20170614124435/tmp/backup ] as anime@160.16.198.30
+ DEBUG [badad3b6] Command: [ -L /home/anime/town/releases/20170614124435/tmp/backup ]
+ DEBUG [badad3b6] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [badad3b6] Finished in 0.091 seconds with exit status 1 (failed).
+ DEBUG [1e82d7e0] Running [ -d /home/anime/town/releases/20170614124435/tmp/backup ] as anime@160.16.198.30
+ DEBUG [1e82d7e0] Command: [ -d /home/anime/town/releases/20170614124435/tmp/backup ]
+ DEBUG [1e82d7e0] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [1e82d7e0] Finished in 0.090 seconds with exit status 1 (failed).
+  INFO [a80982ce] Running /usr/bin/env ln -s /home/anime/town/shared/tmp/backup /home/anime/town/releases/20170614124435/tmp/backup as anime@160.16.198.30
+ DEBUG [a80982ce] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/tmp/backup /home/anime/town/releases/20170614124435/tmp/backup )
+ DEBUG [a80982ce] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [a80982ce] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [14e68edd] Running [ -L /home/anime/town/releases/20170614124435/tmp/pids ] as anime@160.16.198.30
+ DEBUG [14e68edd] Command: [ -L /home/anime/town/releases/20170614124435/tmp/pids ]
+ DEBUG [14e68edd] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [14e68edd] Finished in 0.090 seconds with exit status 1 (failed).
+ DEBUG [e1a4aecb] Running [ -d /home/anime/town/releases/20170614124435/tmp/pids ] as anime@160.16.198.30
+ DEBUG [e1a4aecb] Command: [ -d /home/anime/town/releases/20170614124435/tmp/pids ]
+ DEBUG [e1a4aecb] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [e1a4aecb] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [21bf7ea6] Running /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/tmp/pids as anime@160.16.198.30
+ DEBUG [21bf7ea6] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/tmp/pids )
+ DEBUG [21bf7ea6] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [21bf7ea6] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [49fa84ab] Running /usr/bin/env ln -s /home/anime/town/shared/tmp/pids /home/anime/town/releases/20170614124435/tmp/pids as anime@160.16.198.30
+ DEBUG [49fa84ab] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/tmp/pids /home/anime/town/releases/20170614124435/tmp/pids )
+ DEBUG [49fa84ab] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [49fa84ab] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [3578da3d] Running [ -L /home/anime/town/releases/20170614124435/tmp/cache ] as anime@160.16.198.30
+ DEBUG [3578da3d] Command: [ -L /home/anime/town/releases/20170614124435/tmp/cache ]
+ DEBUG [3578da3d] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3578da3d] Finished in 0.090 seconds with exit status 1 (failed).
+ DEBUG [4b2fd514] Running [ -d /home/anime/town/releases/20170614124435/tmp/cache ] as anime@160.16.198.30
+ DEBUG [4b2fd514] Command: [ -d /home/anime/town/releases/20170614124435/tmp/cache ]
+ DEBUG [4b2fd514] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [4b2fd514] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [7f9e0c42] Running /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/tmp/cache as anime@160.16.198.30
+ DEBUG [7f9e0c42] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /home/anime/town/releases/20170614124435/tmp/cache )
+ DEBUG [7f9e0c42] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [7f9e0c42] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [afac0f1d] Running /usr/bin/env ln -s /home/anime/town/shared/tmp/cache /home/anime/town/releases/20170614124435/tmp/cache as anime@160.16.198.30
+ DEBUG [afac0f1d] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/tmp/cache /home/anime/town/releases/20170614124435/tmp/cache )
+ DEBUG [afac0f1d] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [afac0f1d] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [0dd84a26] Running [ -L /home/anime/town/releases/20170614124435/tmp/sockets ] as anime@160.16.198.30
+ DEBUG [0dd84a26] Command: [ -L /home/anime/town/releases/20170614124435/tmp/sockets ]
+ DEBUG [0dd84a26] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [0dd84a26] Finished in 0.094 seconds with exit status 1 (failed).
+ DEBUG [1aa02bee] Running [ -d /home/anime/town/releases/20170614124435/tmp/sockets ] as anime@160.16.198.30
+ DEBUG [1aa02bee] Command: [ -d /home/anime/town/releases/20170614124435/tmp/sockets ]
+ DEBUG [1aa02bee] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [1aa02bee] Finished in 0.090 seconds with exit status 1 (failed).
+  INFO [2e796461] Running /usr/bin/env ln -s /home/anime/town/shared/tmp/sockets /home/anime/town/releases/20170614124435/tmp/sockets as anime@160.16.198.30
+ DEBUG [2e796461] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/tmp/sockets /home/anime/town/releases/20170614124435/tmp/sockets )
+ DEBUG [2e796461] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [2e796461] Finished in 0.095 seconds with exit status 0 (successful).
+ DEBUG [c66f1f1f] Running [ -L /home/anime/town/releases/20170614124435/vendor/bundle ] as anime@160.16.198.30
+ DEBUG [c66f1f1f] Command: [ -L /home/anime/town/releases/20170614124435/vendor/bundle ]
+ DEBUG [c66f1f1f] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [c66f1f1f] Finished in 0.097 seconds with exit status 1 (failed).
+ DEBUG [82943905] Running [ -d /home/anime/town/releases/20170614124435/vendor/bundle ] as anime@160.16.198.30
+ DEBUG [82943905] Command: [ -d /home/anime/town/releases/20170614124435/vendor/bundle ]
+ DEBUG [82943905] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [82943905] Finished in 0.091 seconds with exit status 1 (failed).
+  INFO [7ab3d753] Running /usr/bin/env ln -s /home/anime/town/shared/vendor/bundle /home/anime/town/releases/20170614124435/vendor/bundle as anime@160.16.198.30
+ DEBUG [7ab3d753] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/vendor/bundle /home/anime/town/releases/20170614124435/vendor/bundle )
+ DEBUG [7ab3d753] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [7ab3d753] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [85b8d030] Running [ -L /home/anime/town/releases/20170614124435/public/assets ] as anime@160.16.198.30
+ DEBUG [85b8d030] Command: [ -L /home/anime/town/releases/20170614124435/public/assets ]
+ DEBUG [85b8d030] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85b8d030] Finished in 0.093 seconds with exit status 1 (failed).
+ DEBUG [1694af81] Running [ -d /home/anime/town/releases/20170614124435/public/assets ] as anime@160.16.198.30
+ DEBUG [1694af81] Command: [ -d /home/anime/town/releases/20170614124435/public/assets ]
+ DEBUG [1694af81] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [1694af81] Finished in 0.091 seconds with exit status 1 (failed).
+  INFO [f97ac0a7] Running /usr/bin/env ln -s /home/anime/town/shared/public/assets /home/anime/town/releases/20170614124435/public/assets as anime@160.16.198.30
+ DEBUG [f97ac0a7] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/shared/public/assets /home/anime/town/releases/20170614124435/public/assets )
+ DEBUG [f97ac0a7] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [f97ac0a7] Finished in 0.104 seconds with exit status 0 (successful).
+ DEBUG [9993c9f8] Running if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [9993c9f8] Command: if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi
+ DEBUG [9993c9f8] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [9993c9f8] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [3e6bf357] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle check --path /home/anime/town/shared/bundle as anime@160.16.198.30
+ DEBUG [3e6bf357] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle check --path /home/anime/town/shared/bundle )
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [3e6bf357] 	Warning: the running version of Bundler (1.14.3) is older than the version that created the lockfile (1.14.4). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+ DEBUG [3e6bf357] 	The following gems are missing
+ DEBUG [3e6bf357] 	 * net-ssh (4.1.0)
+ DEBUG [3e6bf357] 	 * net-scp (1.2.1)
+ DEBUG [3e6bf357] 	 * sshkit (1.13.1)
+ DEBUG [3e6bf357] 	 * airbrussh (1.2.0)
+ DEBUG [3e6bf357] 	 * debug_inspector (0.0.2)
+ DEBUG [3e6bf357] 	 * binding_of_caller (0.7.2)
+ DEBUG [3e6bf357] 	 * byebug (9.0.6)
+ DEBUG [3e6bf357] 	 * capistrano (3.8.1)
+ DEBUG [3e6bf357] 	 * capistrano-bundler (1.2.0)
+ DEBUG [3e6bf357] 	 * capistrano-rails (1.2.3)
+ DEBUG [3e6bf357] 	 * capistrano-rbenv (2.1.1)
+ DEBUG [3e6bf357] 	 * spring (2.0.1)
+ DEBUG [3e6bf357] 	 * web-console (2.3.0)
+ DEBUG [3e6bf357] 	Install missing gems with `bundle install`
+ DEBUG [3e6bf357] Finished in 0.705 seconds with exit status 1 (failed).
+  INFO [85699418] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle install --path /home/anime/town/shared/bundle --jobs 4 --without development test --deployment --quiet as anime@160.16.198.30
+ DEBUG [85699418] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle install --path /home/anime/town/shared/bundle --jobs 4 --without development test --deployment --quiet )
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [85699418] 	sh: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+sh: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [85699418] Finished in 2.979 seconds with exit status 0 (successful).
+ DEBUG [37439af6] Running if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [37439af6] Command: if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi
+ DEBUG [37439af6] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [37439af6] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [47101880] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle exec rake assets:precompile as anime@160.16.198.30
+ DEBUG [47101880] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [47101880] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [47101880] Finished in 3.689 seconds with exit status 0 (successful).
+ DEBUG [5740d7d2] Running if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [5740d7d2] Command: if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi
+ DEBUG [5740d7d2] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [5740d7d2] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [aac90e8d] Running /usr/bin/env mkdir -p /home/anime/town/releases/20170614124435/assets_manifest_backup as anime@160.16.198.30
+ DEBUG [aac90e8d] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/anime/town/releases/20170614124435/assets_manifest_backup )
+ DEBUG [aac90e8d] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [aac90e8d] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [ec7da3f5] Running /usr/bin/env ls /home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest* as anime@160.16.198.30
+ DEBUG [ec7da3f5] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ls /home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest* )
+ DEBUG [ec7da3f5] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [ec7da3f5] 	/home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest-348532bb52b1e9784413fbc1c0e8db9d.json
+ DEBUG [ec7da3f5] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [4aec309a] Running /usr/bin/env ls /home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest* as anime@160.16.198.30
+ DEBUG [4aec309a] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ls /home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest* )
+ DEBUG [4aec309a] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [4aec309a] 	/home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest-348532bb52b1e9784413fbc1c0e8db9d.json
+ DEBUG [4aec309a] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO [d8196496] Running /usr/bin/env cp /home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest-348532bb52b1e9784413fbc1c0e8db9d.json /home/anime/town/releases/20170614124435/assets_manifest_backup as anime@160.16.198.30
+ DEBUG [d8196496] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env cp /home/anime/town/releases/20170614124435/public/assets/.sprockets-manifest-348532bb52b1e9784413fbc1c0e8db9d.json /home/anime/town/releases/20170614124435/assets_manifest_backup )
+ DEBUG [d8196496] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [d8196496] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [89a54e8d] Running if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi as anime@160.16.198.30
+ DEBUG [89a54e8d] Command: if test ! -d /home/anime/town/releases/20170614124435; then echo "Directory does not exist '/home/anime/town/releases/20170614124435'" 1>&2; false; fi
+ DEBUG [89a54e8d] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [89a54e8d] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [8f292a53] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle exec rake db:migrate as anime@160.16.198.30
+ DEBUG [8f292a53] Command: cd /home/anime/town/releases/20170614124435 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.3.1 /usr/local/rbenv/bin/rbenv exec bundle exec rake db:migrate )
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+ DEBUG [8f292a53] 	== 20170522124052 CreateImages: migrating =====================================
+-- create_table(:images)
+   -> 0.0018s
+-- add_index(:images, [:en_title, :ja_title])
+   -> 0.0011s
+== 20170522124052 CreateImages: migrated (0.0030s) ============================
+
+== 20170604100110 CreateMovies: migrating =====================================
+-- create_table(:movies)
+   -> 0.0012s
+== 20170604100110 CreateMovies: migrated (0.0013s) ============================
+
+  INFO [8f292a53] Finished in 3.380 seconds with exit status 0 (successful).
+  INFO [e1cc6fda] Running /usr/bin/env ln -s /home/anime/town/releases/20170614124435 /home/anime/town/releases/current as anime@160.16.198.30
+ DEBUG [e1cc6fda] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /home/anime/town/releases/20170614124435 /home/anime/town/releases/current )
+ DEBUG [e1cc6fda] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [e1cc6fda] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [7bf1781c] Running /usr/bin/env mv /home/anime/town/releases/current /home/anime/town as anime@160.16.198.30
+ DEBUG [7bf1781c] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mv /home/anime/town/releases/current /home/anime/town )
+ DEBUG [7bf1781c] 	bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8)
+  INFO [7bf1781c] Finished in 0.092 seconds with exit status 0 (successful).

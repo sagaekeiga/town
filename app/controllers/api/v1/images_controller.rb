@@ -9,16 +9,11 @@ module Api
       end
       
       def search
-         location = request.body.read
-         @images = Image.where(location: "地下一階")
+         json_request = JSON.parse(request.body.read)
+         @images = Image.where(location: json_request.gps)
          @images.destroy_all
+         render json: @images
       end
-
-      private
-      
-        def image_params
-          params.require(:image).permit(:en_title, :ja_title, :en_content, :ja_content, :url, :location)
-        end
         
     end
   end
