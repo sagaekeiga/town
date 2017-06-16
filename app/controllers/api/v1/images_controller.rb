@@ -13,6 +13,12 @@ module Api
          @images.destroy_all
          render json: @images
       end
+      
+      def test
+        params = JSON.parse request.body.read
+        puts params['name']
+        puts params['age']
+      end
         
     end
   end
