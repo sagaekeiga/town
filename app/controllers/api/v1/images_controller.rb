@@ -10,7 +10,7 @@ module Api
       
       def search
          json_request = JSON.parse(request.body.read)
-         @images = Image.where(location: json_request.gps)
+         @images = Image.where(location: request.body.read)
          @images.destroy_all
          render json: @images
       end
