@@ -9,6 +9,7 @@ module Api
       end
       
       def search
+         p params = request.body.read
          @images = Image.all
          @images.destroy_all
          render json: @images
