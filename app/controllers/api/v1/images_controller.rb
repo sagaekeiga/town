@@ -13,15 +13,8 @@ module Api
          logger.debug("params")
          logger.debug(params)
          logger.debug("params")
-         @images = Image.all
-         @images.destroy_all
+         @images = Image.where("ja_title like '%#{params}%'")
          render json: @images
-      end
-      
-      def test
-        params = JSON.parse request.body.read
-        puts params['name']
-        puts params['age']
       end
         
     end

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   namespace :api, { format: 'json' } do
     namespace :v1, { format: 'json' } do 
       post 'images/search'
-      post 'images/test'
 
       resources :images, :only => [:index]
       resources :movies
