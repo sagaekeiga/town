@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       post 'images/search'
       get 'images/index_landing'
       get 'images/index_exit'
+      post 'images/detail'
+      post 'images/navigation'
       
       resources :images, :only => [:index]
       resources :movies

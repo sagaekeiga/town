@@ -10404,3 +10404,14 @@ Processing by ImagesController#index as HTML
 Completed 200 OK in 195ms (Views: 190.7ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/images" for 126.129.109.5 at 2017-06-29 06:30:24 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (74.8ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+Completed 200 OK in 163ms (Views: 144.1ms | ActiveRecord: 3.5ms)
+
+

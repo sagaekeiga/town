@@ -18,6 +18,16 @@ module Api
         render json: @images
       end
       
+      
+      def detail
+         params = request.body.read
+         logger.debug("params")
+         logger.debug(params)
+         logger.debug("params")
+         @image = Image.find_by(ja_title: params)
+         render json: @image
+      end
+      
       def navigation
          params = request.body.read
          logger.debug("params")
