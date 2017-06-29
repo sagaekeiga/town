@@ -9856,3 +9856,325 @@ Processing by ImagesController#index as HTML
 Completed 200 OK in 97ms (Views: 79.7ms | ActiveRecord: 3.8ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateImages (20170522124052)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "location" varchar, "url" varchar, "image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_images_on_en_title_and_ja_title" ON "images" ("en_title", "ja_title")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170522124052"]]
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMovies (20170604100110)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "present" varchar, "destination" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170604100110"]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-06-29 03:59:24 UTC], ["updated_at", 2017-06-29 03:59:24 UTC]]
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateImages (20170522124052)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "location" varchar, "url" varchar, "image" varchar, "start" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_images_on_en_title_and_ja_title" ON "images" ("en_title", "ja_title")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170522124052"]]
+  [1m[35m (34.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMovies (20170604100110)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "present" varchar, "destination" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170604100110"]]
+  [1m[35m (25.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-06-29 04:20:18 UTC], ["updated_at", 2017-06-29 04:20:18 UTC]]
+  [1m[35m (49.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+[0m
+Started GET "/" for 126.129.109.5 at 2017-06-29 04:20:27 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered images/index.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_header.html.erb (20.2ms)
+Completed 200 OK in 912ms (Views: 822.0ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "埼京線"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (33.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "湘南新宿ライン"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "東海道本線・横須賀線"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "東北本線（宇都宮線）・高崎線方面"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "成田エクスプレス"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "成田エクスプレス2"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央本線"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央線（快速）<東京方面>"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央本線特急"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央本線特急"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (21.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央本線"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央線（快速）<高尾方面>"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央線・総武線（各駅停車）<御茶ノ水・千葉方面>"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "山手線内回り<渋谷・品川方面>"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", " 山手線外回り<池袋・上野方面>"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央線・総武線（各駅停車）<三鷹方面>"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "乗り場"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (29.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "東口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "中央東口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "東南口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "南口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (17.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "小田急線改札口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (16.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "都営大江戸線・都営新宿線・京王新線改札口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "小田急線改札口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "京王線改札口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "西口"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("ja_title", "image", "start", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ja_title", "地下鉄丸ノ内線改札"], ["image", "http://i.imgur.com/9h81ns6.jpg"], ["start", "出口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("present", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["present", "西口"], ["destination", "東口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("present", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["present", "東海道本線・横須賀線"], ["destination", "東口"], ["created_at", 2017-06-29 04:20:29 UTC], ["updated_at", 2017-06-29 04:20:29 UTC]]
+  [1m[35m (20.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 126.129.109.5 at 2017-06-29 04:20:38 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (80.4ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+Completed 200 OK in 157ms (Views: 151.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 126.129.109.5 at 2017-06-29 04:21:20 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (37.2ms)
+  Rendered layouts/_header.html.erb (5.9ms)
+Completed 200 OK in 105ms (Views: 100.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 126.129.109.5 at 2017-06-29 04:21:33 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (44.2ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 116ms (Views: 111.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 126.129.109.5 at 2017-06-29 04:22:27 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (189.2ms)
+  Rendered layouts/_header.html.erb (5.8ms)
+Completed 200 OK in 251ms (Views: 247.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies/new" for 126.129.109.5 at 2017-06-29 04:22:33 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 96ms (Views: 63.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/movies" for 126.129.109.5 at 2017-06-29 04:22:36 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "movies".* FROM "movies" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered movies/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images" for 126.129.109.5 at 2017-06-29 04:22:39 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 68ms (Views: 65.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=2" for 126.129.109.5 at 2017-06-29 04:22:46 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  Rendered images/index.html.erb within layouts/application (18.1ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 58ms (Views: 55.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images" for 126.129.109.5 at 2017-06-29 04:23:18 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (31.1ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+Completed 200 OK in 84ms (Views: 81.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=2" for 126.129.109.5 at 2017-06-29 04:23:23 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  Rendered images/index.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 71ms (Views: 68.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 126.129.109.5 at 2017-06-29 04:23:26 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "movies".* FROM "movies" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered movies/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+Completed 200 OK in 50ms (Views: 46.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for 126.129.109.5 at 2017-06-29 04:24:07 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "movies".* FROM "movies" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered movies/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 52ms (Views: 48.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images" for 126.129.109.5 at 2017-06-29 04:24:13 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (34.5ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 81ms (Views: 77.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies" for 126.129.109.5 at 2017-06-29 04:24:31 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "movies".* FROM "movies" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered movies/index.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+Completed 200 OK in 81ms (Views: 76.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for 126.129.109.5 at 2017-06-29 04:25:17 +0000
+Cannot render console from 126.129.109.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "movies".* FROM "movies" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered movies/index.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 0.4ms)
+
+

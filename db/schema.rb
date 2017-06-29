@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20170604100110) do
     t.string   "ja_content"
     t.string   "location"
     t.string   "url"
+    t.string   "image"
+    t.string   "start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["en_title", "ja_title"], name: "index_images_on_en_title_and_ja_title"
