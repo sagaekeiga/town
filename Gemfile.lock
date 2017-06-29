@@ -134,6 +134,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.2)
     multi_json (1.12.1)
+    mysql2 (0.4.6)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
@@ -238,6 +239,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  mysql2
   rails (= 5.0.0)
   ransack
   rmagick

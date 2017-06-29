@@ -29,6 +29,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
 
+gem 'mysql2'
 gem 'kaminari'
 gem "ransack"
 
