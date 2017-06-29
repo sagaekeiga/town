@@ -9,6 +9,7 @@ class CreateImages < ActiveRecord::Migration[5.0]
       t.string :url
       t.string :image
       t.string :start
+      t.string :key
       
 
       t.timestamps
