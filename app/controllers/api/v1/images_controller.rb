@@ -8,6 +8,17 @@ module Api
         render json: @images
       end
       
+      def index_landing
+        @images = Image.where(start: "乗り場")
+        render json: @images
+      end
+      
+      def index_exit
+        @images = Image.where(start: "出口")
+        render json: @images
+      end
+      
+      
       def search
          params = request.body.read
          logger.debug("params")
