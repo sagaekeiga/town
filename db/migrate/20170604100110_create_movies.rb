@@ -9,6 +9,7 @@ class CreateMovies < ActiveRecord::Migration[5.0]
       t.string :destination
       t.string :url
       t.string :key
+      t.string :movie
 
       t.timestamps
     end

@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170604100110) do
     t.string   "destination"
     t.string   "url"
     t.string   "key"
+    t.string   "movie"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
