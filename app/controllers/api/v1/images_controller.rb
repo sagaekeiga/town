@@ -34,6 +34,7 @@ module Api
          logger.debug(params)
          logger.debug("params")
          @image = Image.find_by(key: params)
+         puts "#{@image.ja_title}"
          render json: @image
       end
       
