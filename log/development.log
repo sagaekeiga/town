@@ -10600,3 +10600,168 @@ Processing by MoviesController#show as HTML
 Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 126.115.167.18 at 2017-07-05 14:23:32 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (134.4ms)
+  Rendered layouts/_header.html.erb (14.1ms)
+Completed 200 OK in 882ms (Views: 839.8ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateImages (20170522124052)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "location" varchar, "url" varchar, "image" varchar, "start" varchar, "key" varchar, "movie" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_images_on_en_title_and_ja_title" ON "images" ("en_title", "ja_title")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170522124052"]]
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMovies (20170604100110)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "en_title" varchar, "ja_title" varchar, "en_content" varchar, "ja_content" varchar, "present" varchar, "destination" varchar, "url" varchar, "key" varchar, "movie" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170604100110"]]
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-07-05 14:51:47 UTC], ["updated_at", 2017-07-05 14:51:47 UTC]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_images_on_en_title_and_ja_title' AND type='index'
+[0m
+Started GET "/" for 126.115.167.18 at 2017-07-05 14:54:51 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered images/index.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.html.erb (5.5ms)
+Completed 200 OK in 213ms (Views: 197.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/images/new" for 126.115.167.18 at 2017-07-05 14:54:56 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (8.8ms)
+Completed 200 OK in 151ms (Views: 110.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/images/new" for 126.115.167.18 at 2017-07-05 14:55:45 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+Completed 200 OK in 97ms (Views: 92.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/new" for 126.115.167.18 at 2017-07-05 14:56:17 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+Completed 200 OK in 75ms (Views: 46.1ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/images" for 126.115.167.18 at 2017-07-05 14:56:49 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EMJK/LFp/TEzyw8fvvLN0Hy+cyxRZI6n+k+HNX/6Hd0Ec1mrjEJ/49mcX3se6Ovc2uE8X3FRdi2NtRq/prlDlw==", "image"=>{"en_title"=>"lkjlnljn", "ja_title"=>"lknlknlk", "en_content"=>";knmlknl", "ja_content"=>"lknljnlj", "location"=>"lknlknlkn", "movie"=>"x2WP1ZSQVlQ"}, "commit"=>"登録"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "images" ("en_title", "ja_title", "en_content", "ja_content", "location", "movie", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["en_title", "lkjlnljn"], ["ja_title", "lknlknlk"], ["en_content", ";knmlknl"], ["ja_content", "lknljnlj"], ["location", "lknlknlkn"], ["movie", "x2WP1ZSQVlQ"], ["created_at", 2017-07-05 14:56:49 UTC], ["updated_at", 2017-07-05 14:56:49 UTC]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://town-sagae.c9users.io/
+Completed 302 Found in 28ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/" for 126.115.167.18 at 2017-07-05 14:56:49 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered images/index.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    68:      <td><%= image.ja_content %></td>
+    69:      <td><%= image.location %></td>
+    70:      <td><%= image_tag(image.url, :size => '50x50') %></td>
+    71:      <td><%= image_tag(image.image, :size => '50x50') %></td>
+    72:      <td><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= image.movie %>" frameborder="0" allowfullscreen></iframe></td>
+    73:      <td><%= image.start %></td>
+    74:      <td><%= image.key %></td>
+  
+app/views/images/index.html.erb:71:in `block in _app_views_images_index_html_erb___1454578392658904318_70283740094340'
+app/views/images/index.html.erb:62:in `_app_views_images_index_html_erb___1454578392658904318_70283740094340'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.1ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+Started GET "/" for 126.115.167.18 at 2017-07-05 14:57:42 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered images/index.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_header.html.erb (84.4ms)
+Completed 200 OK in 150ms (Views: 146.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 126.115.167.18 at 2017-07-05 14:58:16 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered images/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+Completed 200 OK in 53ms (Views: 49.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 126.115.167.18 at 2017-07-05 14:58:29 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered images/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/1" for 126.115.167.18 at 2017-07-05 14:59:27 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering images/show.html.erb within layouts/application
+  Rendered images/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 138ms (Views: 79.9ms | ActiveRecord: 0.5ms)
+
+

@@ -10,6 +10,7 @@ class CreateImages < ActiveRecord::Migration[5.0]
       t.string :image
       t.string :start
       t.string :key
+      t.string :movie
       
 
       t.timestamps
