@@ -13,33 +13,32 @@
 ActiveRecord::Schema.define(version: 20170604100110) do
 
   create_table "images", force: :cascade do |t|
-    t.text     "en_title"
-    t.text     "ja_title"
-    t.text     "en_content"
-    t.text     "ja_content"
-    t.text     "location"
-    t.text     "url"
-    t.text     "image"
-    t.text     "start"
-    t.text     "key"
-    t.text     "movie"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["en_title", "ja_title"], name: "index_images_on_en_title_and_ja_title"
+    t.text     "en_title",   limit: 100
+    t.text     "ja_title",   limit: 100
+    t.text     "en_content", limit: 100
+    t.text     "ja_content", limit: 100
+    t.text     "location",   limit: 100
+    t.text     "url",        limit: 100
+    t.text     "image",      limit: 100
+    t.text     "start",      limit: 100
+    t.text     "key",        limit: 100
+    t.text     "movie",      limit: 100
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "movies", force: :cascade do |t|
-    t.text     "en_title"
-    t.text     "ja_title"
-    t.text     "en_content"
-    t.text     "ja_content"
-    t.text     "present"
-    t.text     "destination"
-    t.text     "url"
-    t.text     "key"
-    t.text     "movie"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "en_title",    limit: 100
+    t.text     "ja_title",    limit: 100
+    t.text     "en_content",  limit: 100
+    t.text     "ja_content",  limit: 100
+    t.text     "present",     limit: 100
+    t.text     "destination", limit: 100
+    t.text     "url",         limit: 100
+    t.text     "key",         limit: 100
+    t.text     "movie",       limit: 100
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end

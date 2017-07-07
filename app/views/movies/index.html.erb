@@ -49,6 +49,7 @@
     <th>現在地</th>
     <th>目的地</th>
     <th>key</th>
+    <th>動画</th>
     <th>登録日</th>
     <th>編集日</th>
     <th>管理</th>
@@ -64,6 +65,7 @@
      <td><%= movie.present %></td>
      <td><%= movie.destination %></td>
      <td><%= movie.key %></td>
+     <td><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.movie %>" frameborder="0" allowfullscreen></iframe></td>
      <td><%= show_dat(movie.created_at) %></td>
      <td><%= show_dat(movie.updated_at) %></td>
      <td>
