@@ -33,7 +33,7 @@ module Api
          logger.debug("params")
          logger.debug(params)
          logger.debug("params")
-         @image = Image.find_by(movie: params)
+         @image = Image.find_by(key: params)
          render json: @image
       end
       
