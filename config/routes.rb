@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'images/index_landing'
       get 'images/index_exit'
       post 'images/detail'
+      post 'images/key'
       post 'images/navigation'
       
       resources :images, :only => [:index]
