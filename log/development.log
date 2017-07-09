@@ -11993,3 +11993,98 @@ Processing by ImagesController#index as HTML
 Completed 200 OK in 107ms (Views: 103.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 10.240.0.33 at 2017-07-09 05:26:04 +0000
+Cannot render console from 10.240.0.33! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (94.1ms)
+  Rendered layouts/_header.html.erb (12.7ms)
+Completed 200 OK in 622ms (Views: 592.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/movies/new" for 10.240.1.30 at 2017-07-09 05:26:09 +0000
+Cannot render console from 10.240.1.30! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+Completed 200 OK in 92ms (Views: 68.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies/new" for 10.240.1.16 at 2017-07-09 05:27:17 +0000
+Cannot render console from 10.240.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (6.0ms)
+Completed 200 OK in 123ms (Views: 87.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/movies" for 10.240.1.16 at 2017-07-09 05:27:21 +0000
+Cannot render console from 10.240.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nbraqxlb5+PIWtkLv21oQqLGW6CIKKFt+WZUBB6xuceJC8n8JHBlMSINiW8fd05OBJkU06gdWeeOnMmOx/LnjQ==", "movie"=>{"en_title"=>"", "ja_title"=>"", "en_content"=>"", "ja_content"=>"", "present"=>"", "destination"=>"", "movie"=>"", "key"=>"2b"}, "commit"=>"登録"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("en_title", "ja_title", "en_content", "ja_content", "present", "destination", "key", "movie", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["en_title", ""], ["ja_title", ""], ["en_content", ""], ["ja_content", ""], ["present", ""], ["destination", ""], ["key", "2b"], ["movie", ""], ["created_at", 2017-07-09 05:27:21 UTC], ["updated_at", 2017-07-09 05:27:21 UTC]]
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://town-sagae.c9users.io:8080/movies
+Completed 302 Found in 43ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/movies" for 10.240.0.5 at 2017-07-09 05:27:22 +0000
+Cannot render console from 10.240.0.5! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "movies".* FROM "movies" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered movies/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 53ms (Views: 49.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/3/edit" for 10.240.1.16 at 2017-07-09 05:27:27 +0000
+Cannot render console from 10.240.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/edit.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 48ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/movies/3" for 10.240.0.240 at 2017-07-09 05:27:32 +0000
+Cannot render console from 10.240.0.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FF75sM2zBEQqueEGxJ0r7Lx8ms3pyYHSCYP1eQxeQ8UA7+rn8JiGlsDusWJkhw3gGiPVvsn8eVh+eWjz1R0djw==", "movie"=>{"en_title"=>"", "ja_title"=>"", "en_content"=>"", "ja_content"=>"", "present"=>"", "destination"=>"", "movie"=>"", "key"=>"3b"}, "commit"=>"登録", "id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "movies" SET "key" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["key", "3b"], ["updated_at", 2017-07-09 05:27:32 UTC], ["id", 3]]
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://town-sagae.c9users.io:8080/movies/3
+Completed 302 Found in 23ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/movies/3" for 10.240.0.240 at 2017-07-09 05:27:32 +0000
+Cannot render console from 10.240.0.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 10.240.0.33 at 2017-07-09 05:27:37 +0000
+Cannot render console from 10.240.0.33! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "movies".* FROM "movies" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered movies/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
