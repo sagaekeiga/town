@@ -45,6 +45,6 @@ class ImagesController < ApplicationController
       private
       
         def image_params
-          params.require(:image).permit(:en_title, :ja_title, :en_content, :ja_content, :url, :location, :movie, :start)
+          params.require(:image).permit(:en_title, :ja_title, :en_content, :ja_content, :url, :location, :movie, :start, :image)
         end
 end
