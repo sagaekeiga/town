@@ -12294,3 +12294,236 @@ Processing by ImagesController#new as HTML
 Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/images" for 126.115.167.18 at 2017-07-14 07:33:40 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (26.7ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 62ms (Views: 58.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/20/edit" for 126.115.167.18 at 2017-07-14 07:33:47 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering images/edit.html.erb within layouts/application
+  Rendered images/edit.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/images/20" for 126.115.167.18 at 2017-07-14 07:36:05 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N2XP+N4bJKtDMPovyWqNAJ7HCZdN4LLH43dYp00EPdkj1Nyv4zCmealnqktpcKsMOJhG5G3VSk2UjcUtlEdjkw==", "image"=>{"en_title"=>"", "ja_title"=>"南口", "en_content"=>"", "ja_content"=>"バスタ新宿に面する入り口。\r\nJR・小田急線南改札口・都営大江戸線・都営新宿線・京王新線改札口に続いている。", "location"=>"", "start"=>"出口", "image"=>"http://i.imgur.com/9h81ns6.jpg", "movie"=>""}, "commit"=>"登録", "id"=>"20"}
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.4ms)[0m  [1m[33mUPDATE "images" SET "en_title" = ?, "en_content" = ?, "ja_content" = ?, "location" = ?, "movie" = ?, "updated_at" = ? WHERE "images"."id" = ?[0m  [["en_title", ""], ["en_content", ""], ["ja_content", "バスタ新宿に面する入り口。\r\nJR・小田急線南改札口・都営大江戸線・都営新宿線・京王新線改札口に続いている。"], ["location", ""], ["movie", ""], ["updated_at", 2017-07-14 07:36:05 UTC], ["id", 20]]
+  [1m[35m (24.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://town-sagae.c9users.io/images/20
+Completed 302 Found in 54ms (ActiveRecord: 34.0ms)
+
+
+Started GET "/images/20" for 126.115.167.18 at 2017-07-14 07:36:06 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering images/show.html.erb within layouts/application
+  Rendered images/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 43ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/20" for 126.115.167.18 at 2017-07-14 08:27:36 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering images/show.html.erb within layouts/application
+  Rendered images/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+Completed 200 OK in 63ms (Views: 57.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images" for 126.115.167.18 at 2017-07-14 08:27:37 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (30.8ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 67ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for 126.115.167.18 at 2017-07-14 08:27:41 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  Rendered images/index.html.erb within layouts/application (18.9ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 48ms (Views: 45.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/26/edit" for 126.115.167.18 at 2017-07-14 08:27:48 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering images/edit.html.erb within layouts/application
+  Rendered images/edit.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/images/26" for 126.115.167.18 at 2017-07-14 08:27:51 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q6TLIwb+ZqDh7rbI1sNprj9+zCgLUT8ZllUeBFG7zBpXFdh0O9Xkcgu55qx22U+imSGDWytkx5Phr4OOiPiSUA==", "image"=>{"en_title"=>"", "ja_title"=>"地下鉄丸ノ内線改札", "en_content"=>"", "ja_content"=>"", "location"=>"", "start"=>"出口", "image"=>"http://i.imgur.com/9h81ns6.jpg", "movie"=>"", "key"=>"11"}, "commit"=>"登録", "id"=>"26"}
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+Unpermitted parameter: key
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "images" SET "en_title" = ?, "en_content" = ?, "ja_content" = ?, "location" = ?, "movie" = ?, "updated_at" = ? WHERE "images"."id" = ?[0m  [["en_title", ""], ["en_content", ""], ["ja_content", ""], ["location", ""], ["movie", ""], ["updated_at", 2017-07-14 08:27:51 UTC], ["id", 26]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://town-sagae.c9users.io/images/26
+Completed 302 Found in 24ms (ActiveRecord: 17.6ms)
+
+
+Started GET "/images/26" for 126.115.167.18 at 2017-07-14 08:27:52 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering images/show.html.erb within layouts/application
+  Rendered images/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images" for 126.115.167.18 at 2017-07-14 08:27:55 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (21.8ms)
+  Rendered layouts/_header.html.erb (71.0ms)
+Completed 200 OK in 119ms (Views: 116.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for 126.115.167.18 at 2017-07-14 08:27:58 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  Rendered images/index.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/26/edit" for 126.115.167.18 at 2017-07-14 08:28:16 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering images/edit.html.erb within layouts/application
+  Rendered images/edit.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+Completed 200 OK in 87ms (Views: 61.0ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/images/26" for 126.115.167.18 at 2017-07-14 08:28:19 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qRKA1/kAqGSpqEmZXRza3q7/dmAj9Iz3L9CuLR8QqUW9o5OAxCsqtkP/Gf39BvzSCKA5EwPBdH1YKjOnxlP3Dw==", "image"=>{"en_title"=>"", "ja_title"=>"地下鉄丸ノ内線改札", "en_content"=>"", "ja_content"=>"", "location"=>"", "start"=>"出口", "image"=>"http://i.imgur.com/9h81ns6.jpg", "movie"=>"", "key"=>"11"}, "commit"=>"登録", "id"=>"26"}
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "images" SET "key" = ?, "updated_at" = ? WHERE "images"."id" = ?[0m  [["key", "11"], ["updated_at", 2017-07-14 08:28:19 UTC], ["id", 26]]
+  [1m[35m (17.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://town-sagae.c9users.io/images/26
+Completed 302 Found in 25ms (ActiveRecord: 17.9ms)
+
+
+Started GET "/images/26" for 126.115.167.18 at 2017-07-14 08:28:20 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering images/show.html.erb within layouts/application
+  Rendered images/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images" for 126.115.167.18 at 2017-07-14 08:28:22 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (28.5ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?page=2" for 126.115.167.18 at 2017-07-14 08:28:25 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  Rendered images/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/new" for 126.115.167.18 at 2017-07-14 08:28:31 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#new as HTML
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/images" for 126.115.167.18 at 2017-07-14 08:28:35 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kfFv9wqGwQCaxL/fqoq+WHa5dSyJOEoMyGUAQW5JeX+FQHygN61D0nCT77sKkJhU0OY6X6kNsoa/n53LtwonNQ==", "image"=>{"en_title"=>"", "ja_title"=>"", "en_content"=>"", "ja_content"=>"", "location"=>"", "start"=>"乗り場", "image"=>"", "movie"=>"", "key"=>"1"}, "commit"=>"登録"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("en_title", "ja_title", "en_content", "ja_content", "location", "image", "start", "key", "movie", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["en_title", ""], ["ja_title", ""], ["en_content", ""], ["ja_content", ""], ["location", ""], ["image", ""], ["start", "乗り場"], ["key", "1"], ["movie", ""], ["created_at", 2017-07-14 08:28:35 UTC], ["updated_at", 2017-07-14 08:28:35 UTC]]
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://town-sagae.c9users.io/
+Completed 302 Found in 23ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/" for 126.115.167.18 at 2017-07-14 08:28:35 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DISTINCT COUNT(DISTINCT "images"."id") FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (87.9ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 121ms (Views: 118.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?page=2" for 126.115.167.18 at 2017-07-14 08:28:39 +0000
+Cannot render console from 126.115.167.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ImagesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "images".* FROM "images" LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  Rendered images/index.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
