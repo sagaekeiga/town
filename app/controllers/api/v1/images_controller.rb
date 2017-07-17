@@ -65,6 +65,15 @@ module Api
          @images = Image.where("ja_title like '%#{params}%'")
          render json: @images
       end
+      
+      def en_search
+         params = request.body.read
+         logger.debug("params")
+         logger.debug(params)
+         logger.debug("params")
+         @images = Image.where("en_title like '%#{params}%'")
+         render json: @images
+      end
         
     end
   end
